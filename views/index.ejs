@@ -28,39 +28,39 @@
             <u class="h1">No Time To Weight</u>
             <form class="form-inline">
                 <div class="form-group">
-                  <label class="sr-only" for="user">Username</label>
-                  <input class="form-control" id="user" placeholder="Username">
+                    <label class="sr-only" for="user">Username</label>
+                    <input class="form-control" id="user" placeholder="Username">
                 </div>
                 <div class="form-group">
-                  <label class="sr-only" for="pass">Password</label>
-                  <input type="password" class="form-control" id="pass" placeholder="Password">
+                    <label class="sr-only" for="pass">Password</label>
+                    <input type="password" class="form-control" id="pass" placeholder="Password">
                 </div>
                 <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Remember me
-                  </label>
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
                 </div>
                 <button type="submit" class="btn btn-default">Sign in</button>
-              </form>
+            </form>
             <button id="test" type="button">Test</button>
             <button id="logout" type="button">Logout</button>
             <nav>
                 <span><a href="/signup" id="signup">sign-up</a></span>
             </nav>
         </div>
-        <% for( let i = 0; i < quotes.length; i++ ) { %>
+        <% for( let i=0; i < quotes.length; i++ ) { %>
             <% if (i % 2) { %>
                 <blockquote class="blockquote-reverse">
                     <p><%= quotes[i].quote %></p>
                     <footer><%= quotes[i].author %></footer>
                 </blockquote>
             <% } else { %>
-                <blockquote>
-                    <p><%= quotes[i].quote %></p>
-                    <footer><%= quotes[i].author %></footer>
-                </blockquote>
-            <% } %> 
-        <% } %>       
+                    <blockquote>
+                        <p><%= quotes[i].quote %></p>
+                        <footer><%= quotes[i].author %></footer>
+                    </blockquote>
+            <% } %>
+        <% } %>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
