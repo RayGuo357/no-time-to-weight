@@ -10,6 +10,26 @@ const quotes = [
     {
         quote: "Great works are performed not by strength but by perseverance.",
         author: "Samuel Johnson"
+    },
+    {
+        quote: "With love and patience, nothing is impossible.",
+        author: "Daisaku Ikeda"
+    },
+    {
+        quote: "All great achievements require time.",
+        author: "Maya Angelou"
+    },
+    {
+        quote: "You are never too old to set another goal or to dream a new dream.",
+        author: "C.S. Lewis"
+    },
+    {
+        quote: "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+        author: "Winston Churchill"
+    },
+    {
+        quote: "For me, becoming isn't about arriving somewhere or achieving a certain aim. I see it instead as forward motion, a means of evolving, a way to reach continuously toward a better self. The journey doesn't end.",
+        author: "Michelle Obama"
     }
 ]
 
