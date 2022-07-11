@@ -26,11 +26,22 @@
     <div class="container">
         <div class=" text-center">
             <u class="h1">No Time To Weight</u>
-            <form id="login">
-                <input type="text" placeholder="user" name="user">
-                <input type="text" placeholder="pass" name="pass">
-                <button type="submit">Submit</button>
-            </form>
+            <form class="form-inline">
+                <div class="form-group">
+                  <label class="sr-only" for="user">Username</label>
+                  <input class="form-control" id="user" placeholder="Username">
+                </div>
+                <div class="form-group">
+                  <label class="sr-only" for="pass">Password</label>
+                  <input type="password" class="form-control" id="pass" placeholder="Password">
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Remember me
+                  </label>
+                </div>
+                <button type="submit" class="btn btn-default">Sign in</button>
+              </form>
             <button id="test" type="button">Test</button>
             <button id="logout" type="button">Logout</button>
             <nav>
