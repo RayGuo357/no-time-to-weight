@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NTTW</title>
     <!-- https://stackoverflow.com/questions/48248832/stylesheet-not-loaded-because-of-mime-type -->
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="style.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
         integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
@@ -15,6 +15,10 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css"
         integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&family=Quicksand:wght@300;400&display=swap" rel="stylesheet">
     <script>
         if (document.cookie) {
             location.replace('/home') // Already logged in, go to home page
@@ -24,26 +28,27 @@
 
 <body>
     <div class="container">
-        <div class=" text-center">
+        <div class="text-center">
             <u class="h1">No Time To Weight</u>
-            <form class="form-inline">
-                <div class="form-group">
-                    <label class="sr-only" for="user">Username</label>
-                    <input class="form-control" id="user" placeholder="Username">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <form>
+                        <div class="form-group">
+                            <label for="user">Username</label>
+                            <input type="email" class="form-control" id="user" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <label for="pass">Password</label>
+                            <input type="password" class="form-control" id="pass" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label class="sr-only" for="pass">Password</label>
-                    <input type="password" class="form-control" id="pass" placeholder="Password">
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> Remember me
-                    </label>
-                </div>
-                <button type="submit" class="btn btn-default">Sign in</button>
-            </form>
-            <button id="test" type="button">Test</button>
-            <button id="logout" type="button">Logout</button>
+                <div class="col-md-3"></div>
+            </div>
+            <button class="btn btn-default" id="test" type="button">Test</button>
+            <button class="btn btn-default" id="logout" type="button">Logout</button>
             <nav>
                 <span><a href="/signup" id="signup">sign-up</a></span>
             </nav>

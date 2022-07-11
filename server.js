@@ -5,6 +5,7 @@ require('dotenv').config()
 const PORT = process.env.PORT || 5050;
 const db = require("./database.js")
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'))
 app.use(express.json());
 app.set('view engine', 'ejs')
 
