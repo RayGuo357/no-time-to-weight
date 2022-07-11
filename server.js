@@ -12,7 +12,7 @@ app.set('view engine', 'ejs')
 const helper = require('./helper.js')
 
 app.get('/', (req, res) => {
-    res.render('index.ejs', {quotes: helper.randomQuotes(2)})
+    res.render('index.ejs', {quotes: helper.randomQuotes(3)})
 })
 
 app.get('/login', (req, res) => {

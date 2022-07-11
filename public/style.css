@@ -10,3 +10,18 @@ body {
 .container {
     height: 100%;
 }
+
+.header-container {
+    padding: 2%;
+}
+
+.rounded-outline {
+    border-radius: 12px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 2%;
+}
+
+.quotes-container {
+    margin-top: 5%;
+}
