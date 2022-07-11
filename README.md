@@ -2,5 +2,5 @@
 
 ## TODO
 
-- [ ] Start
+- [x] Start
 - [ ] Finish
