@@ -4,7 +4,7 @@
 const Database = require('better-sqlite3');
 
 // Connect to a database or create one if it doesn't exist yet.
-const db = new Database('user.db');
+const db = new Database('./db/user.db');
 
 // Is the database initialized or do we need to initialize it?
 const stmt = db.prepare(`SELECT name FROM sqlite_master WHERE type='table' and name='userinfo';`);

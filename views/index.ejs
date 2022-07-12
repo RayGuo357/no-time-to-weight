@@ -8,13 +8,7 @@
     <title>NTTW</title>
     <!-- https://stackoverflow.com/questions/48248832/stylesheet-not-loaded-because-of-mime-type -->
     <link rel="stylesheet" href="style.css">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
-        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css"
-        integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,59 +21,62 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="text-center">
-            <div class="header-container">
+    <div class="container h-100">
+        <div class="text-center h-60">
+            <div class="header-container h-25">
                 <u class="h1">No Time To Weight</u>
             </div>
-            <div class="row">
+            <div class="row h-75 pb-5">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
-                    <div class="rounded-outline">
-                        <form>
-                            <div class="form-group">
-                                <label for="user">Username</label>
+                    <div class="rounded-outline text-start shadow p-3 bg-body rounded h-100 d-flex flex-column align-items-center justify-content-center">
+                        <form class="w-100 d-flex flex-column align-items-center justify-content-center">
+                            <div class="form-group w-75 p-1">
+                                <label class="text-secondary" for="user">Username</label>
                                 <input type="email" class="form-control" id="user" placeholder="Username">
                             </div>
-                            <div class="form-group">
-                                <label for="pass">Password</label>
+                            <div class="form-group w-50 p-1">
+                                <label class="text-secondary" for="pass">Password</label>
                                 <input type="password" class="form-control" id="pass" placeholder="Password">
                             </div>
-                            <button type="submit" class="btn btn-primary">Sign in</button>
-                            <nav>
-                                <span><a href="/signup" id="signup">sign-up</a></span>
-                            </nav>
+                            <div class="btn-group p-1">
+                                <button type="submit" class="btn btn-primary">Sign in</button>
+                                <a class="btn btn-primary" href="/signup" id="signup">Sign up</a>
+                            </div>
                         </form>
                     </div>
                 </div>
                 <div class="col-md-3"></div>
             </div>
         </div>
-        <div class="quotes-container">
+        <div class="quotes-container h-40">
             <% for( let i=0; i < quotes.length; i++ ) { %>
                 <% if (i % 2) { %>
-                    <blockquote class="blockquote-reverse">
+                    <blockquote class="blockquote text-end">
                         <p><%= quotes[i].quote %></p>
-                        <footer><%= quotes[i].author %></footer>
+                        <footer class="blockquote-footer"><%= quotes[i].author %></footer>
                     </blockquote>
                 <% } else { %>
-                        <blockquote>
+                        <blockquote class="blockquote">
                             <p><%= quotes[i].quote %></p>
-                            <footer><%= quotes[i].author %></footer>
+                            <footer class="blockquote-footer"><%= quotes[i].author %></footer>
                         </blockquote>
                 <% } %>
             <% } %>
         </div>
     </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins)
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"
         integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
         crossorigin="anonymous"></script>
-    <!-- Latest compiled and minified JavaScript -->
+    Latest compiled and minified JavaScript
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
         integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
