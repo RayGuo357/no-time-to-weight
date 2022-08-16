@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NTTW</title>
     <!-- https://stackoverflow.com/questions/48248832/stylesheet-not-loaded-because-of-mime-type -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&family=Quicksand:wght@300;400&display=swap" rel="stylesheet">
     <script>
         if (document.cookie) {
-            location.replace('/home') // Already logged in, go to home page
+            // location.replace('/home') // Already logged in, go to home page
         }
     </script>
 </head>
@@ -30,12 +30,13 @@
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
                     <div class="rounded-outline text-start shadow p-3 bg-body rounded h-100 d-flex flex-column align-items-center justify-content-center">
+                        <div>Login</div>
                         <form class="w-100 d-flex flex-column align-items-center justify-content-center">
                             <div class="form-group w-75 p-1">
                                 <label class="text-secondary" for="user">Username</label>
                                 <input type="email" class="form-control" id="user" placeholder="Username">
                             </div>
-                            <div class="form-group w-50 p-1">
+                            <div class="form-group w-75 p-1">
                                 <label class="text-secondary" for="pass">Password</label>
                                 <input type="password" class="form-control" id="pass" placeholder="Password">
                             </div>
