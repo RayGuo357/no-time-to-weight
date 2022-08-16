@@ -35,7 +35,7 @@ ________________________________________________________________________________
                                 user TEXT UNIQUE, 
                                 pass TEXT, 
                                 email TEXT UNIQUE,
-                                date_created INTEGER
+                                date_created INTEGER,
                                 public INTEGER NOT NULL DEFAULT 0,
                                 CHECK (public IN (0,1)));
         CREATE TABLE weight (   weight_id INTEGER PRIMARY KEY AUTOINCREMENT, 
