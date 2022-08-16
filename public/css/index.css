@@ -14,10 +14,35 @@ blockquote {
     border-right: 5px solid #ddd;
 }
 
+.quotes-container {
+    overflow: auto;
+}
+
+.h-3 {
+    height: 3% !important;
+}
+
+.h-15 {
+    height: 15% !important;
+}
+
 .h-40 {
     height: 40% !important;
 }
 
+.h-55 {
+    height: 55% !important;
+}
+
 .h-60 {
     height: 60% !important;
+}
+
+.h-97 {
+    height: 97% !important;
+}
+
+.footer {
+    background-color: blanchedalmond;
+    bottom: 0px;
 }
