@@ -9,6 +9,15 @@ blockquote {
     padding: 1%;
 }
 
+.footer-btn {
+    color: inherit !important;
+    text-decoration: none;
+}
+
+.footer-btn:hover {
+    text-decoration: underline;
+}
+
 .blockquote.text-end {
     border-left: 0;
     border-right: 5px solid #ddd;
