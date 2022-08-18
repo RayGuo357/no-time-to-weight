@@ -23,7 +23,7 @@ app.get('/login', (req, res) => {
 
 // Login endpoint
 app.post('/login/submit', (req, res) => {
-    
+
 })
 
 // Sign up page
@@ -35,7 +35,7 @@ app.get('/signup', (req, res) => {
 app.post('/signup/submit', (req, res) => {
     const stmt = db.prepare('INSERT INTO userinfo (user, pass, email, date_created) VALUES (?, ?, ?, ?)');
     try {
-        const info = stmt.run(req.body.user, req.body.pass, req.body.email, helper.getTodaysDate());
+        const info = stmt.run(req.body.user, req.body.pass, req.body.email == '' ? null : req.body.email, helper.getTodaysDate());
         if(info.changes === 1) {
             res.status(201).json({message:"1 record created: ID " + info.lastInsertRowid + " (201)"})
         } else {
