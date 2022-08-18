@@ -24,6 +24,8 @@ window.addEventListener("load", function () {
             .then(res => {
                 if (res.ok) {
                     window.location = '/home'
+                } else {
+                    document.getElementById('error').classList.remove('hidden')
                 }
             })
     })

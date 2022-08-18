@@ -9,6 +9,10 @@ blockquote {
     padding: 1%;
 }
 
+.hidden {
+    display: none !important;
+}
+
 .footer-btn {
     color: inherit !important;
     text-decoration: none;
