@@ -21,6 +21,11 @@ app.get('/login', (req, res) => {
     res.sendFile('login.ejs')
 })
 
+// Login endpoint
+app.post('/login/submit', (req, res) => {
+    
+})
+
 // Sign up page
 app.get('/signup', (req, res) => {
     res.render('signup.ejs')
