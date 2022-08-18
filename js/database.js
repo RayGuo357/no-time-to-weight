@@ -32,8 +32,8 @@ ________________________________________________________________________________
 */
     const sqlInit = `
         CREATE TABLE userinfo ( id INTEGER PRIMARY KEY AUTOINCREMENT, 
-                                user TEXT UNIQUE, 
-                                pass TEXT, 
+                                user TEXT UNIQUE NOT NULL, 
+                                pass TEXT NOT NULL, 
                                 email TEXT UNIQUE,
                                 date_created INTEGER,
                                 public INTEGER NOT NULL DEFAULT 0,
