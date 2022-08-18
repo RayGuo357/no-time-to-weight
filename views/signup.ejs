@@ -18,13 +18,25 @@
                     <div class="col-md-6">
                         <div class="rounded-outline text-start shadow p-3 bg-body rounded h-100 d-flex flex-column align-items-center justify-content-center">
                             <div class="alert alert-danger hidden" role="alert" id="error">
-                                Error
+                                Error: That username or email is already in use.
                             </div>
                             <form class="w-100 d-flex flex-column align-items-center justify-content-center" id="signup">
-                                <input type="text" placeholder="email" name="email">
-                                <input type="text" placeholder="user" name="user">
-                                <input type="text" placeholder="pass" name="pass">
-                                <button class="btn btn-primary" type="submit">Submit</button>
+                                <!-- <input type="text" placeholder="email" name="email"> -->
+                                <div class="form-group w-75 p-1">
+                                    <label class="text-secondary" for="email">Email (Optional)</label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                                </div>
+                                <div class="form-group w-75 p-1">
+                                    <label class="text-secondary" for="user">Username</label>
+                                    <input type="text" class="form-control" id="user" name="user" placeholder="Username" required>
+                                </div>
+                                <div class="form-group w-75 p-1">
+                                    <label class="text-secondary" for="pass">Password</label>
+                                    <input type="password" class="form-control" id="pass" name="pass" placeholder="Password" required>
+                                </div>
+                                <!-- <input type="text" placeholder="user" name="user">
+                                <input type="text" placeholder="pass" name="pass"> -->
+                                <button class="btn btn-primary" type="submit">Create Account</button>
                             </form>
                         </div>
                     </div>
