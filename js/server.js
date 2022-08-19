@@ -34,6 +34,7 @@ app.get('/signup', (req, res) => {
 // Endpoint for account creation
 app.post('/signup/submit', (req, res) => {
     const stmt = db.prepare('INSERT INTO userinfo (user, pass, email, date_created) VALUES (?, ?, ?, ?)');
+    if (req.body.pass !== req.body.confPass) res.status(400).json({message:"Bad Request (400)"})
     try {
         const info = stmt.run(req.body.user, req.body.pass, req.body.email == '' ? null : req.body.email, helper.getTodaysDate());
         if(info.changes === 1) {
