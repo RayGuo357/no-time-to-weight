@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const jwt = require('jsonwebtoken')
+const md5 = require('md5')
 require('dotenv').config()
 const PORT = process.env.PORT || 5050;
 const db = require("./database.js")
@@ -24,14 +25,13 @@ app.get('/login', (req, res) => {
 // Login endpoint
 app.post('/login/submit', (req, res) => {
     const stmt = db.prepare("SELECT * FROM userinfo WHERE user = ? AND pass = ?");
-    const result = stmt.get(req.body.user, req.body.pass);
+    const result = stmt.get(req.body.user, md5(req.body.pass));
 	if(result === undefined) {
 		res.status(404).json({"message":"Incorrect username or password. (404)"})
 	} else {
         // let temp = result.json()
         let user = { id: result.id, user: result.user }
         const accessToken = generateAccessToken(user)
-        console.log(accessToken)
 		res.status(200).json({ accessToken: accessToken });
 	}
 })
@@ -46,7 +46,7 @@ app.post('/signup/submit', (req, res) => {
     const stmt = db.prepare('INSERT INTO userinfo (user, pass, email, date_created) VALUES (?, ?, ?, ?)');
     if (req.body.pass !== req.body.confPass) res.status(400).json({message:"Bad Request (400)"})
     try {
-        const info = stmt.run(req.body.user, req.body.pass, req.body.email == '' ? null : req.body.email, helper.getTodaysDate());
+        const info = stmt.run(req.body.user, md5(req.body.pass), req.body.email == '' ? null : req.body.email, helper.getTodaysDate());
         if(info.changes === 1) {
             res.status(201).json({message:"1 record created: ID " + info.lastInsertRowid + " (201)"})
         } else {
