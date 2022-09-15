@@ -18,6 +18,7 @@
             // location.replace('/home') // Already logged in, go to home page
         }
     </script>
+    <script src="js/login.js"></script>
 </head>
 
 <body>
@@ -28,15 +29,18 @@
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
                     <div class="rounded-outline text-start shadow p-3 bg-body rounded h-100 d-flex flex-column align-items-center justify-content-center">
+                        <div class="alert alert-danger hidden" role="alert" id="error_invalid">
+                            Invalid username/password.
+                        </div>
                         <div>Login</div>
-                        <form class="w-100 d-flex flex-column align-items-center justify-content-center">
+                        <form id="login" class="w-100 d-flex flex-column align-items-center justify-content-center">
                             <div class="form-group w-75 p-1">
                                 <label class="text-secondary" for="user">Username</label>
-                                <input type="email" class="form-control" id="user" placeholder="Username">
+                                <input type="text" class="form-control" id="user" name="user" placeholder="Username" required>
                             </div>
                             <div class="form-group w-75 p-1">
                                 <label class="text-secondary" for="pass">Password</label>
-                                <input type="password" class="form-control" id="pass" placeholder="Password">
+                                <input type="password" class="form-control" id="pass" name="pass" placeholder="Password" required>
                             </div>
                             <div class="btn-group p-1">
                                 <button type="submit" class="btn btn-primary">Sign in</button>

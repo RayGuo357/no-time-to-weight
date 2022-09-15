@@ -20,10 +20,15 @@ window.addEventListener("load", function () {
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify(data)
         })
-            // .then(res => console.log(res.ok))
             .then(res => res.json())
             .then((res) => {
                 console.log(res)
+                if (res.accessToken) {
+                    document.cookie = `NTTWUserCookie=${res.accessToken};path=/`
+                    window.location = '/home'
+                } else {
+                    document.getElementById('error_invalid').classList.remove('hidden')
+                }
             })
     })
 })

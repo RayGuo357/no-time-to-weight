@@ -23,7 +23,17 @@ app.get('/login', (req, res) => {
 
 // Login endpoint
 app.post('/login/submit', (req, res) => {
-
+    const stmt = db.prepare("SELECT * FROM userinfo WHERE user = ? AND pass = ?");
+    const result = stmt.get(req.body.user, req.body.pass);
+	if(result === undefined) {
+		res.status(404).json({"message":"Incorrect username or password. (404)"})
+	} else {
+        // let temp = result.json()
+        let user = { id: result.id, user: result.user }
+        const accessToken = generateAccessToken(user)
+        console.log(accessToken)
+		res.status(200).json({ accessToken: accessToken });
+	}
 })
 
 // Sign up page
@@ -47,9 +57,29 @@ app.post('/signup/submit', (req, res) => {
     }
 })
 
+// Home page after login
 app.get('/home', (req, res) => {
     res.render('home.ejs')
 })
+
+// Verift JWT
+const authenticateToken = (req, res, next) =>{
+    const authHeader = req.headers['authorization']
+    const token = authHeader && authHeader.split(' ')[1]
+
+    if (token == null) return res.status(401)
+    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+        if (err) return res.status(403)
+        req.user = user
+        next()
+    })
+}
+
+// Generates access token (JWT)
+const generateAccessToken = (user) => {
+    //encrypts user information as JSON webtoken using access token
+    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET)
+}
 
 app.listen(PORT, () => {
     console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`);
