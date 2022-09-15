@@ -33,7 +33,7 @@ window.addEventListener("load", function () {
                     }
                 })
         } else { // Passwords do not match
-            
+            document.getElementById('error_match').classList.remove('hidden')
         }
     })
 })
