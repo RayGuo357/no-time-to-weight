@@ -59,7 +59,9 @@ app.post('/signup/submit', (req, res) => {
 
 // Home page after login
 app.get('/home', (req, res) => {
-    res.render('home.ejs')
+    let token = req.headers.cookie.split('=')[1]
+    let user = decryptToken(token)
+    res.render('home.ejs', user)
 })
 
 // Verift JWT
@@ -73,6 +75,16 @@ const authenticateToken = (req, res, next) =>{
         req.user = user
         next()
     })
+}
+
+//decrypts token using secret access token
+const decryptToken = (token) => {
+    let result
+    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, endUser) => {
+        if (err) return console.error(err)
+        result = endUser
+    })
+    return result
 }
 
 // Generates access token (JWT)
