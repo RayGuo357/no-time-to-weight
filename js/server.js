@@ -3,7 +3,7 @@ const app = express()
 const jwt = require('jsonwebtoken')
 const md5 = require('md5')
 require('dotenv').config()
-const PORT = process.env.PORT || 5050;
+const PORT = process.env.PORT || 8000;
 const db = require("./database.js")
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'))
@@ -64,7 +64,7 @@ app.get('/home', (req, res) => {
     res.render('home.ejs', user)
 })
 
-// Verift JWT
+// Verify JWT
 const authenticateToken = (req, res, next) =>{
     const authHeader = req.headers['authorization']
     const token = authHeader && authHeader.split(' ')[1]
